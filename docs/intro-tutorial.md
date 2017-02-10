@@ -216,7 +216,7 @@ So, let's use the ingredients above to create a Redux store and hook it up to An
 ```typescript
 // ... imports as above
 
-import { rootReducer, IAppStore, INTIAL_STATE } from './store'; // < New
+import { rootReducer, IAppState, INTIAL_STATE } from './store'; // < New
 import { CounterActions } from './app.actions'; // <- New
 
 @NgModule({
@@ -233,7 +233,7 @@ import { CounterActions } from './app.actions'; // <- New
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(ngRedux: NgRedux<IAppStore>) {
+  constructor(ngRedux: NgRedux<IAppState>) {
     // Tell @angular-redux/store about our rootReducer and our initial state.
     // It will use this to create a redux store for us and wire up all the
     // events.
